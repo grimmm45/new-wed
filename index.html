@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Portafolio personal de desarrollo y diseño web.">
+    <meta name="author" content="Tu Nombre">
+
+    <title>Mi Portafolio | Desarrollo Web</title>
+
+    <style>
+        /* =====================================================
+           CONFIGURACIÓN GENERAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        :root {
+            --fondo: #080808;
+            --fondo-secundario: #111111;
+            --tarjeta: #151515;
+            --borde: rgba(255,255,255,0.10);
+            --texto: #ffffff;
+            --texto-suave: #a8a8a8;
+            --principal: #7c5cff;
+            --principal-hover: #987fff;
+            --verde: #25d366;
+        }
+
+        .contenedor {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           FONDO
+        ===================================================== */
+
+        .fondo-luz {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(124, 92, 255, 0.12);
+            filter: blur(100px);
+            top: -200px;
+            left: -200px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .fondo-luz-2 {
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background: rgba(0, 180, 255, 0.08);
+            filter: blur(100px);
+            bottom: -200px;
+            right: -200px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(8,8,8,0.75);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .nav-contenido {
+            width: min(1100px, 90%);
+            margin: auto;
+
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--principal);
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .menu a {
+            color: #cccccc;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: white;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 100px;
+        }
+
+        .hero-contenido {
+            max-width: 800px;
+        }
+
+        .etiqueta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 14px;
+
+            border: 1px solid rgba(124,92,255,0.35);
+            border-radius: 50px;
+
+            background: rgba(124,92,255,0.08);
+
+            color: #c5b9ff;
+            font-size: 13px;
+
+            margin-bottom: 25px;
+        }
+
+        .punto {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+            background: #5cff8d;
+
+            box-shadow: 0 0 12px #5cff8d;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 85px);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--principal);
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            color: var(--texto-suave);
+            font-size: 18px;
+
+            margin-bottom: 35px;
+        }
+
+        .botones {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .boton {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 24px;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .boton-principal {
+            background: var(--principal);
+            color: white;
+        }
+
+        .boton-principal:hover {
+            background: var(--principal-hover);
+            transform: translateY(-3px);
+        }
+
+        .boton-secundario {
+            border: 1px solid var(--borde);
+            color: white;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .boton-secundario:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           SECCIONES
+        ===================================================== */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .titulo-seccion {
+            margin-bottom: 50px;
+        }
+
+        .titulo-seccion small {
+            color: var(--principal);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+        }
+
+        .titulo-seccion h2 {
+            font-size: clamp(32px, 5vw, 50px);
+            margin-top: 10px;
+            letter-spacing: -2px;
+        }
+
+        .titulo-seccion p {
+            color: var(--texto-suave);
+            max-width: 600px;
+            margin-top: 15px;
+        }
+
+
+        /* =====================================================
+           SOBRE MI
+        ===================================================== */
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .sobre-texto p {
+            color: var(--texto-suave);
+            margin-bottom: 18px;
+        }
+
+        .datos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .dato {
+            padding: 25px;
+
+            background: var(--tarjeta);
+            border: 1px solid var(--borde);
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+        }
+
+        .dato:hover {
+            transform: translateY(-5px);
+            border-color: rgba(124,92,255,0.5);
+        }
+
+        .dato h3 {
+            font-size: 27px;
+            color: var(--principal);
+        }
+
+        .dato p {
+            color: var(--texto-suave);
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+
+        /* =====================================================
+           HABILIDADES
+        ===================================================== */
+
+        .habilidades {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .habilidad {
+            padding: 12px 18px;
+
+            background: var(--tarjeta);
+            border: 1px solid var(--borde);
+
+            border-radius: 10px;
+
+            color: #dddddd;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           PROYECTOS
+        ===================================================== */
+
+        .proyectos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .proyecto {
+            background: var(--tarjeta);
+            border: 1px solid var(--borde);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            transition: 0.35s;
+        }
+
+        .proyecto:hover {
+            transform: translateY(-8px);
+            border-color: rgba(124,92,255,0.5);
+        }
+
+        .proyecto-imagen {
+            height: 220px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(124,92,255,0.25),
+                    rgba(0,0,0,0.5)
+                );
+
+            font-size: 45px;
+        }
+
+        .proyecto-contenido {
+            padding: 25px;
+        }
+
+        .proyecto-contenido h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .proyecto-contenido p {
+            color: var(--texto-suave);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .ver-proyecto {
+            color: #b9aaff;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .ver-proyecto:hover {
+            color: white;
+        }
+
+
+        /* =====================================================
+           CONTACTO
+        ===================================================== */
+
+        .contacto {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(124,92,255,0.12),
+                    rgba(0,0,0,0)
+                );
+
+            border: 1px solid var(--borde);
+            border-radius: 25px;
+
+            padding: 70px 30px;
+        }
+
+        .contacto h2 {
+            font-size: clamp(32px, 5vw, 55px);
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+
+        .contacto p {
+            color: var(--texto-suave);
+            max-width: 550px;
+            margin: 0 auto 30px;
+        }
+
+        .contacto-botones {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .whatsapp {
+            background: var(--verde);
+            color: #061b0c;
+        }
+
+        .whatsapp:hover {
+            background: #45e27d;
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 40px 0;
+
+            border-top: 1px solid var(--borde);
+
+            text-align: center;
+
+            color: #666;
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           ANIMACIONES
+        ===================================================== */
+
+        .aparecer {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: 0.8s ease;
+        }
+
+        .aparecer.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           CELULARES
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            .menu {
+                gap: 15px;
+            }
+
+            .menu a {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .sobre-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .proyectos {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .nav-contenido {
+                height: 65px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .menu {
+                gap: 10px;
+            }
+
+            .menu li:nth-child(2) {
+                display: none;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .datos {
+                grid-template-columns: 1fr;
+            }
+
+            .boton {
+                width: 100%;
+            }
+
+            .contacto-botones .boton {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- EFECTOS DE FONDO -->
+
+    <div class="fondo-luz"></div>
+    <div class="fondo-luz-2"></div>
+
+
+    <!-- =====================================================
+         MENÚ
+    ===================================================== -->
+
+    <nav>
+
+        <div class="nav-contenido">
+
+            <!-- CAMBIA TU NOMBRE AQUÍ -->
+
+            <a href="#inicio" class="logo">
+                Tu<span>Nombre</span>
+            </a>
+
+            <ul class="menu">
+
+                <li>
+                    <a href="#inicio">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="#sobre-mi">Sobre mí</a>
+                </li>
+
+                <li>
+                    <a href="#proyectos">Proyectos</a>
+                </li>
+
+                <li>
+                    <a href="#contacto">Contacto</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         INICIO
+    ===================================================== -->
+
+    <section class="hero" id="inicio">
+
+        <div class="contenedor">
+
+            <div class="hero-contenido aparecer">
+
+                <div class="etiqueta">
+
+                    <span class="punto"></span>
+
+                    Disponible para nuevos proyectos
+
+                </div>
+
+
+                <h1>
+
+                    Creo experiencias
+                    <span>digitales.</span>
+
+                </h1>
+
+
+                <p>
+
+                    Desarrollo páginas web modernas, atractivas y
+                    adaptadas a dispositivos móviles. Aquí puedes
+                    conocer algunos de mis proyectos y mi trabajo.
+
+                </p>
+
+
+                <div class="botones">
+
+                    <a
+                        href="#proyectos"
+                        class="boton boton-principal"
+                    >
+                        Ver mis proyectos
+                    </a>
+
+
+                    <a
+                        href="#contacto"
+                        class="boton boton-secundario"
+                    >
+                        Contactarme
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SOBRE MÍ
+    ===================================================== -->
+
+    <section id="sobre-mi">
+
+        <div class="contenedor">
+
+            <div class="titulo-seccion aparecer">
+
+                <small>Sobre mí</small>
+
+                <h2>
+                    Un poco sobre mi trabajo.
+                </h2>
+
+                <p>
+                    Una breve presentación que podrás personalizar
+                    cuando terminemos de construir tu portafolio.
+                </p>
+
+            </div>
+
+
+            <div class="sobre-grid">
+
+                <div class="sobre-texto aparecer">
+
+                    <p>
+                        Hola, soy <strong>Tu Nombre</strong>.
+                        Me interesa el desarrollo y diseño de páginas
+                        web modernas, buscando que cada proyecto tenga
+                        una apariencia profesional y una buena
+                        experiencia para el usuario.
+                    </p>
+
+                    <p>
+                        En este portafolio puedes encontrar algunos
+                        ejemplos de proyectos que he realizado y
+                        diferentes estilos de páginas que puedo crear.
+                    </p>
+
+                    <p>
+                        Mi objetivo es convertir ideas en páginas web
+                        atractivas, funcionales y adaptadas a cualquier
+                        dispositivo.
+                    </p>
+
+                </div>
+
+
+                <div class="datos aparecer">
+
+                    <div class="dato">
+
+                        <h3>3+</h3>
+
+                        <p>
+                            Proyectos de referencia
+                        </p>
+
+                    </div>
+
+
+                    <div class="dato">
+
+                        <h3>100%</h3>
+
+                        <p>
+                            Diseño adaptable
+                        </p>
+
+                    </div>
+
+
+                    <div class="dato">
+
+                        <h3>24/7</h3>
+
+                        <p>
+                            Tu página disponible
+                        </p>
+
+                    </div>
+
+
+                    <div class="dato">
+
+                        <h3>∞</h3>
+
+                        <p>
+                            Ideas por crear
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HABILIDADES
+    ===================================================== -->
+
+    <section>
+
+        <div class="contenedor">
+
+            <div class="titulo-seccion aparecer">
+
+                <small>Lo que hago</small>
+
+                <h2>
+                    Mis habilidades
+                </h2>
+
+            </div>
+
+
+            <div class="habilidades aparecer">
+
+                <div class="habilidad">
+                    HTML
+                </div>
+
+                <div class="habilidad">
+                    CSS
+                </div>
+
+                <div class="habilidad">
+                    JavaScript
+                </div>
+
+                <div class="habilidad">
+                    Diseño Web
+                </div>
+
+                <div class="habilidad">
+                    Diseño Responsive
+                </div>
+
+                <div class="habilidad">
+                    Landing Pages
+                </div>
+
+                <div class="habilidad">
+                    Optimización
+                </div>
+
+                <div class="habilidad">
+                    Experiencia de Usuario
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROYECTOS
+    ===================================================== -->
+
+    <section id="proyectos">
+
+        <div class="contenedor">
+
+            <div class="titulo-seccion aparecer">
+
+                <small>Portafolio</small>
+
+                <h2>
+                    Mis proyectos
+                </h2>
+
+                <p>
+                    Estos son algunos ejemplos de páginas que puedo
+                    desarrollar. Cada proyecto tendrá su propia página
+                    cuando los construyamos.
+                </p>
+
+            </div>
+
+
+            <div class="proyectos">
+
+
+                <!-- ================================
+                     PROYECTO 1
+                ================================= -->
+
+                <article class="proyecto aparecer">
+
+                    <div class="proyecto-imagen">
+                        🌐
+                    </div>
+
+                    <div class="proyecto-contenido">
+
+                        <h3>
+                            Proyecto 01
+                        </h3>
+
+                        <p>
+                            Página web moderna para presentar una
+                            empresa, servicio o emprendimiento de
+                            manera profesional.
+                        </p>
+
+                        <!-- CAMBIA EL ENLACE CUANDO
+                             TENGAMOS LA PÁGINA -->
+
+                        <a
+                            href="proyectos/proyecto1.html"
+                            class="ver-proyecto"
+                        >
+                            Ver proyecto →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================================
+                     PROYECTO 2
+                ================================= -->
+
+                <article class="proyecto aparecer">
+
+                    <div class="proyecto-imagen">
+                        🍔
+                    </div>
+
+                    <div class="proyecto-contenido">
+
+                        <h3>
+                            Proyecto 02
+                        </h3>
+
+                        <p>
+                            Diseño web para un restaurante o negocio
+                            gastronómico con menú, información y
+                            contacto.
+                        </p>
+
+                        <a
+                            href="proyectos/proyecto2.html"
+                            class="ver-proyecto"
+                        >
+                            Ver proyecto →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ================================
+                     PROYECTO 3
+                ================================= -->
+
+                <article class="proyecto aparecer">
+
+                    <div class="proyecto-imagen">
+                        💼
+                    </div>
+
+                    <div class="proyecto-contenido">
+
+                        <h3>
+                            Proyecto 03
+                        </h3>
+
+                        <p>
+                            Página profesional para mostrar servicios,
+                            información personal, experiencia y
+                            formas de contacto.
+                        </p>
+
+                        <a
+                            href="proyectos/proyecto3.html"
+                            class="ver-proyecto"
+                        >
+                            Ver proyecto →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACTO
+    ===================================================== -->
+
+    <section id="contacto">
+
+        <div class="contenedor">
+
+            <div class="contacto aparecer">
+
+                <h2>
+                    ¿Tienes un proyecto en mente?
+                </h2>
+
+                <p>
+                    Si necesitas una página web para tu negocio,
+                    proyecto o marca personal, puedes ponerte en
+                    contacto conmigo.
+                </p>
+
+
+                <div class="contacto-botones">
+
+
+                    <!-- CAMBIA EL NÚMERO POR TU WHATSAPP -->
+
+                    <a
+                        href="https://wa.me/595XXXXXXXXX"
+                        target="_blank"
+                        class="boton whatsapp"
+                    >
+                        WhatsApp
+                    </a>
+
+
+                    <!-- CAMBIA TU INSTAGRAM -->
+
+                    <a
+                        href="https://instagram.com/TU_USUARIO"
+                        target="_blank"
+                        class="boton boton-secundario"
+                    >
+                        Instagram
+                    </a>
+
+
+                    <!-- CAMBIA TU CORREO -->
+
+                    <a
+                        href="mailto:tucorreo@gmail.com"
+                        class="boton boton-secundario"
+                    >
+                        Email
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <div class="contenedor">
+
+            © <span id="año"></span> Tu Nombre.
+
+            Todos los derechos reservados.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        /* Año automático */
+
+        document.getElementById("año").textContent =
+            new Date().getFullYear();
+
+
+        /* Animaciones al aparecer */
+
+        const elementos =
+            document.querySelectorAll(".aparecer");
+
+
+        const observador =
+            new IntersectionObserver(
+
+                (entradas) => {
+
+                    entradas.forEach((entrada) => {
+
+                        if (entrada.isIntersecting) {
+
+                            entrada.target.classList.add("visible");
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        elementos.forEach((elemento) => {
+
+            observador.observe(elemento);
+
+        });
+
+    </script>
+
+</body>
+</html>
