@@ -919,7 +919,217 @@
                         <a
                             href="proyectos/proyecto1.html"
                             class="ver-proyecto"
-                        >
+                        ><!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyecto 1 | Landing Page Profesional</title>
+<meta name="description" content="Landing page profesional desarrollada por Rodrigo Ibarrola.">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#080b12;color:#f5f7fa;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,90%);margin:auto}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(8,11,18,.9);backdrop-filter:blur(12px);border-bottom:1px solid #202632}
+.nav-content{min-height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.25rem;font-weight:800}.logo span{color:#7c5cff}
+.nav-links{display:flex;gap:25px;list-style:none}.nav-links a{color:#aeb6c3}.nav-links a:hover{color:#fff}
+.menu-btn{display:none;background:none;border:0;color:white;font-size:1.7rem;cursor:pointer}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden;background:radial-gradient(circle at 80% 20%,rgba(124,92,255,.2),transparent 35%),radial-gradient(circle at 15% 80%,rgba(0,214,201,.1),transparent 30%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:70px}
+.tag{display:inline-block;padding:8px 13px;border:1px solid #5545a8;border-radius:999px;color:#b9aaff;background:#151329;font-size:.85rem;margin-bottom:22px}
+h1{font-size:clamp(2.7rem,7vw,5.2rem);line-height:1.02;letter-spacing:-2px;margin-bottom:24px}
+.gradient-text{background:linear-gradient(90deg,#8d75ff,#53d9d0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#aab2bf;font-size:1.1rem;max-width:620px;margin-bottom:32px}
+.buttons{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;justify-content:center;align-items:center;padding:13px 21px;border-radius:10px;font-weight:700;border:1px solid transparent;transition:.25s}
+.btn:hover{transform:translateY(-2px)}.btn-primary{background:#7c5cff;color:#fff}.btn-primary:hover{background:#6c4ef0}
+.btn-secondary{border-color:#303744;background:#11151e;color:#fff}
+
+.mockup{padding:12px;border-radius:20px;background:#111621;border:1px solid #29303d;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.browser{overflow:hidden;border-radius:14px;background:#111722;border:1px solid #29303d}
+.browser-top{height:42px;display:flex;align-items:center;gap:7px;padding:0 15px;background:#171d29}
+.dot{width:10px;height:10px;border-radius:50%;background:#4d5665}
+.screen{min-height:370px;padding:35px;background:linear-gradient(135deg,rgba(124,92,255,.15),transparent 55%),#0c111b}
+.screen-small{width:40%;height:10px;border-radius:10px;background:#5e53bd;margin-bottom:18px}
+.screen-title{width:80%;height:32px;border-radius:8px;background:#e9edf5;margin-bottom:13px}
+.screen-title.second{width:58%;background:#818a99;margin-bottom:30px}
+.screen-card{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.screen-card div{height:120px;border-radius:12px;background:#181f2c;border:1px solid #29303d}
+
+section{padding:100px 0}.about{background:#0b0f17}
+.section-title{max-width:700px;margin-bottom:50px}.section-title span{color:#8d75ff;font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:2px}
+.section-title h2{font-size:clamp(2rem,5vw,3.3rem);line-height:1.1;margin:10px 0 15px}.section-title p{color:#9fa8b6}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.about-card{padding:28px;border-radius:18px;border:1px solid #252c37;background:#0d121c}.about-card h3{margin-bottom:12px}.about-card p{color:#a4acb8}
+
+.features,.process{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature{padding:28px;border-radius:18px;background:#0d121c;border:1px solid #252c37;transition:.25s}
+.feature:hover{transform:translateY(-5px);border-color:#5b48bd}
+.feature-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:12px;background:#191532;margin-bottom:20px;font-size:1.4rem}
+.feature h3{margin-bottom:10px}.feature p,.step p{color:#9fa8b6;font-size:.95rem}
+.step{padding:28px;border-left:2px solid #7c5cff;background:#0d121c}.step-number{font-size:.85rem;color:#8d75ff;font-weight:800;margin-bottom:10px}.step h3{margin-bottom:10px}
+
+.cta{padding-top:40px}.cta-box{text-align:center;padding:70px 30px;border-radius:24px;border:1px solid #3a2d79;background:radial-gradient(circle at center,rgba(124,92,255,.15),transparent 60%),#0d121c}
+.cta-box h2{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:15px}.cta-box p{color:#a4acb8;max-width:650px;margin:0 auto 28px}
+footer{padding:30px 0;border-top:1px solid #202632;color:#7f8896;font-size:.9rem}.footer-content{display:flex;justify-content:space-between;align-items:center}.back{color:#a996ff}
+
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:850px){
+.hero-grid,.about-grid{grid-template-columns:1fr}.features,.process{grid-template-columns:1fr}.mockup{max-width:650px;margin:auto;width:100%}
+}
+@media(max-width:650px){
+.menu-btn{display:block}.nav-links{position:absolute;top:72px;left:0;width:100%;display:none;flex-direction:column;padding:20px;background:#080b12;border-bottom:1px solid #202632}
+.nav-links.active{display:flex}.screen{min-height:300px;padding:22px}.screen-card{grid-template-columns:1fr 1fr}.footer-content{flex-direction:column;gap:10px;text-align:center}
+}
+</style>
+</head>
+
+<body>
+<nav>
+<div class="container nav-content">
+<a href="../index.html" class="logo">Rodrigo<span>.</span></a>
+<button class="menu-btn" id="menuBtn">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#proyecto">Proyecto</a></li>
+<li><a href="#funciones">Funciones</a></li>
+<li><a href="#proceso">Proceso</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</div>
+</nav>
+
+<main>
+<section class="hero" id="inicio">
+<div class="container hero-grid">
+<div class="reveal">
+<span class="tag">Proyecto 01 · Desarrollo Web</span>
+<h1>Landing page <span class="gradient-text">profesional</span></h1>
+<p>Una página web moderna, rápida y adaptable a celulares, pensada para presentar una marca, mostrar sus servicios y facilitar el contacto con potenciales clientes.</p>
+<div class="buttons">
+<a href="#proyecto" class="btn btn-primary">Ver proyecto</a>
+<a href="../index.html" class="btn btn-secondary">Volver al portafolio</a>
+</div>
+</div>
+
+<div class="mockup reveal">
+<div class="browser">
+<div class="browser-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<div class="screen">
+<div class="screen-small"></div>
+<div class="screen-title"></div>
+<div class="screen-title second"></div>
+<div class="screen-card"><div></div><div></div><div></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="about" id="proyecto">
+<div class="container">
+<div class="section-title reveal">
+<span>01 · Sobre el proyecto</span>
+<h2>Una web pensada para mostrar una marca de forma clara.</h2>
+<p>Este proyecto representa una landing page creada para un negocio que necesita una presencia profesional en internet. La estructura prioriza el contenido importante y facilita que el visitante encuentre rápidamente la información.</p>
+</div>
+
+<div class="about-grid">
+<div class="about-card reveal">
+<h3>Objetivo</h3>
+<p>Crear una página moderna que presente los servicios de un negocio, genere confianza y facilite el contacto con potenciales clientes.</p>
+</div>
+<div class="about-card reveal">
+<h3>Resultado</h3>
+<p>Una interfaz limpia, responsive y preparada para funcionar correctamente tanto en computadoras como en teléfonos celulares.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="funciones">
+<div class="container">
+<div class="section-title reveal">
+<span>02 · Funciones</span>
+<h2>Características principales</h2>
+<p>Elementos utilizados para construir una experiencia web moderna y funcional.</p>
+</div>
+
+<div class="features">
+<article class="feature reveal"><div class="feature-icon">📱</div><h3>Diseño responsive</h3><p>La página se adapta automáticamente a celulares, tablets y computadoras.</p></article>
+<article class="feature reveal"><div class="feature-icon">⚡</div><h3>Interfaz rápida</h3><p>Estructura ligera y organizada para ofrecer una navegación sencilla y fluida.</p></article>
+<article class="feature reveal"><div class="feature-icon">🎯</div><h3>Enfoque comercial</h3><p>Los botones y secciones están organizados para dirigir al visitante hacia una acción concreta.</p></article>
+<article class="feature reveal"><div class="feature-icon">✨</div><h3>Animaciones</h3><p>Elementos que aparecen suavemente al desplazarse para aportar dinamismo.</p></article>
+<article class="feature reveal"><div class="feature-icon">🧩</div><h3>Estructura modular</h3><p>Las secciones pueden modificarse y reutilizarse para diferentes proyectos.</p></article>
+<article class="feature reveal"><div class="feature-icon">🔗</div><h3>Contacto directo</h3><p>Botones preparados para conectar al visitante con los principales canales de comunicación.</p></article>
+</div>
+</div>
+</section>
+
+<section class="about" id="proceso">
+<div class="container">
+<div class="section-title reveal">
+<span>03 · Proceso</span>
+<h2>Cómo fue desarrollado</h2>
+<p>Una estructura sencilla para transformar una idea en una página web funcional.</p>
+</div>
+
+<div class="process">
+<article class="step reveal"><div class="step-number">PASO 01</div><h3>Planificación</h3><p>Se definieron el objetivo de la página, el contenido principal y las acciones que debía realizar el usuario.</p></article>
+<article class="step reveal"><div class="step-number">PASO 02</div><h3>Diseño</h3><p>Se creó una interfaz visual moderna utilizando una estructura clara, tipografía legible y componentes adaptables.</p></article>
+<article class="step reveal"><div class="step-number">PASO 03</div><h3>Desarrollo</h3><p>Se implementaron las secciones, botones, navegación, responsive y animaciones con HTML, CSS y JavaScript.</p></article>
+</div>
+</div>
+</section>
+
+<section class="cta" id="contacto">
+<div class="container">
+<div class="cta-box reveal">
+<h2>¿Tienes un proyecto en mente?</h2>
+<p>Este proyecto es una demostración de lo que puedo crear. Puedes volver al portafolio para conocer más trabajos y ponerte en contacto conmigo.</p>
+<div class="buttons" style="justify-content:center">
+<a href="https://wa.me/595983259385" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Contactarme por WhatsApp</a>
+<a href="../index.html" class="btn btn-secondary">Ver portafolio</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-content">
+<p>© <span id="year"></span> Rodrigo Ibarrola · Proyecto 01</p>
+<a href="../index.html" class="back">← Volver al portafolio</a>
+</div>
+</footer>
+
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",()=>navLinks.classList.toggle("active"));
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+link.addEventListener("click",()=>navLinks.classList.remove("active"));
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting) entry.target.classList.add("visible");
+});
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(element=>observer.observe(element));
+</script>
+</body>
+</html>
                             Ver proyecto →
                         </a>
 
